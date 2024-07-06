@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to your CSS file or include it in your global styles */
+@keyframes slideInDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  /* Define the keyframes for the moving gradient */
+@keyframes borderGradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Style for the main container with animated border */
+  .main-container {
+    position: relative;
+    background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
+    background-size: 200% 200%;
+    border-radius:0;
+    padding: 2px;
+    animation: borderGradientAnimation 3s ease infinite;
+  }
+  
+  .main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: borderGradientAnimation 3s ease infinite;
+    padding: 2px;
+  }
+  
+  .main-container::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  
