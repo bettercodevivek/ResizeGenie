@@ -1,30 +1,22 @@
 import React from 'react';
 
-const FileUploader = ({ onFileUpload }) => {
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) {
-      onFileUpload(file);
-    } else {
-      alert('Please select an image file');
-    }
+function FileUploader({ onFileUpload }) {
+  const handleFileChange = (e) => {
+    onFileUpload(e.target.files[0]);
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4 bg-gray-100 rounded-lg shadow-md">
+    <div className="flex flex-col items-center justify-center">
+      <label className="block mb-4 text-lg font-medium text-white">
+        Upload your image
+      </label>
       <input
         type="file"
-        accept="image/*"
         onChange={handleFileChange}
-        className="mb-4 w-full"
+        className="file:mr-4 file:py-4 file:px-8 file:rounded-2xl hover:cursor-pointer file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
       />
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md w-full"
-      >
-        Upload Image
-      </button>
     </div>
   );
-};
+}
 
 export default FileUploader;
