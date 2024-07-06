@@ -1,4 +1,3 @@
-// src/components/ImageResizer.js
 import React, { useState } from 'react';
 
 const platformDimensions = {
