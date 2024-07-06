@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-500 flex flex-col items-center justify-center p-4">
+    <div  className="min-h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-3xl font-semibold mb-4 absolute top-12">Social Media Image Resizer</h1>
       {!uploadedFile ? (
         <FileUploader onFileUpload={handleFileUpload} />
