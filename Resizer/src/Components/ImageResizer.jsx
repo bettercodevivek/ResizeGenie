@@ -43,7 +43,7 @@ const ImageResizer = ({ imageUrl }) => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md">
+    <div className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md text-center">
       <img src={imageUrl} alt="Original" className="mb-4 w-full h-auto rounded-lg" />
       <div className="mb-4">
         <label className="block text-gray-700 mb-2">Select Platform:</label>

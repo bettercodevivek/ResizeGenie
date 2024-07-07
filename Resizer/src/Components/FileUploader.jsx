@@ -6,7 +6,7 @@ function FileUploader({ onFileUpload }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center text-center">
       <label className="block mb-4 text-lg font-medium text-white">
         Upload your image
       </label>
